@@ -1907,22 +1907,141 @@ body {
   gap: 20px;
   min-height: 490px;
 }
+@media (max-width: 768px) {
+  .b-place {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-height: auto;
+  }
+}
 .b-place__map {
   position: relative;
   border-radius: 35px;
   background-color: #fff;
-  padding: 32px 0 0 32px;
   overflow: hidden;
   width: 50%;
 }
+@media (max-width: 1024px) {
+  .b-place__map {
+    width: 60%;
+  }
+}
+@media (max-width: 768px) {
+  .b-place__map {
+    width: 100%;
+    min-height: 380px;
+  }
+}
+@media (max-width: 480px) {
+  .b-place__map {
+    min-height: 250px;
+    border-radius: 20px;
+  }
+}
 .b-place__title {
+  padding: 32px;
   max-width: 560px;
+}
+@media (max-width: 1024px) {
+  .b-place__title {
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .b-place__title {
+    padding: 12px;
+  }
 }
 .b-place__img {
   position: absolute;
-  bottom: 0;
+  bottom: -5px;
   right: 0;
 }
+@media (max-width: 768px) {
+  .b-place__img {
+    max-width: 600px;
+  }
+}
+@media (max-width: 480px) {
+  .b-place__img {
+    max-width: 350px;
+    border: 3px solid #fff;
+  }
+}
+.b-place__plate {
+  background-color: #282525;
+  border-radius: 35px;
+  padding: 32px;
+  width: 50%;
+}
+@media (max-width: 1024px) {
+  .b-place__plate {
+    padding: 20px;
+    width: 40%;
+  }
+}
+@media (max-width: 768px) {
+  .b-place__plate {
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .b-place__plate {
+    padding: 14px;
+    border-radius: 20px;
+  }
+}
+
+.plate-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 8px;
+}
+@media (max-width: 480px) {
+  .plate-list {
+    gap: 6px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+.plate-list__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.plate-list__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  min-width: 110px;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 140%;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 35px;
+  border: 1px solid #fff;
+}
+@media (max-width: 1024px) {
+  .plate-list__link {
+    padding: 4px 16px;
+  }
+}
+@media (max-width: 480px) {
+  .plate-list__link {
+    font-size: 16px;
+  }
+}
+
 .footer {
   margin-top: 120px;
   background-color: #282525;
