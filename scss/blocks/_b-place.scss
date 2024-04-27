@@ -1,0 +1,26 @@
+.b-place {
+    display: flex;
+    gap: 20px;  
+    min-height: 490px; 
+
+    &__map {
+        position: relative;
+        border-radius: $main-radius;
+        background-color: #fff;
+        padding: 32px 0 0 32px;
+        overflow: hidden;
+        width: 50%;
+    }
+
+    &__title {
+        max-width: 560px;
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+    &__plate {
+        
+    }
+}

@@ -1,0 +1,61 @@
+.swiper-choose {
+
+    &__item {
+        border-radius: $main-radius;
+        background-color: #fff;
+        padding: 32px;
+
+        @media(max-width: $breakpoint1024) {
+            padding: 18px 16px;
+            border-radius: 20px;
+        }
+        @media(max-width: $breakpoint480) {
+            padding: 16px 14px;
+        }
+    }
+    &__img {
+        display: flex;
+        margin-bottom: 120px;
+
+        @media(max-width: $breakpoint1440) {
+            margin-bottom: 80px;
+        }
+        @media(max-width: $breakpoint1024) {
+            margin-bottom: 60px;
+        }
+        @media(max-width: $breakpoint480) {
+            margin-bottom: 20px;
+            width: 100px;
+        }
+    }
+    &__text {
+        margin-top: 16px;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: $dark-gray;
+
+        @media(max-width: $breakpoint480) {
+            margin-top: 11px;
+            font-size: 12px;
+        }
+    }
+    &__slide {
+        display: flex !important;
+        height: auto !important;
+    }
+}
+
+.choose-info {
+    margin-top: 48px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 140%;
+    color: $dark-gray;
+    max-width: 1048px;
+
+    @media(max-width: $breakpoint480) {
+        margin-top: 28px;
+        font-size: 14px;
+    }
+}
