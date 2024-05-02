@@ -7,6 +7,9 @@
     @media(max-width: $breakpoint768) {
         padding: 10px 16px;
     }
+    @media(max-width: $breakpoint480) {
+        border-radius: 25px;
+    }
 
     &__link {
         display: flex;
@@ -17,6 +20,19 @@
         height: 80px;
         border: 1px solid transparent;
         transition: border .3s;
+
+        @media(max-width: $breakpoint768) {
+            width: 80px;
+        }
+        @media(max-width: 380px) {
+            height: 60px;
+        }
+
+        & img {
+            @media(max-width: 380px) {
+                max-height: 30px;
+            }
+        }
 
         &:hover {
             border: 1px solid $secondary-color;
@@ -33,6 +49,10 @@
     height: 40px !important;
     border-radius: 50% !important;
     background-color: $secondary-color;
+
+    @media(max-width: $breakpoint768) {
+        display: none !important;
+    }
 
     & svg {
         width: fit-content !important;

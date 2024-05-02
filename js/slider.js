@@ -6,15 +6,19 @@ const swiperBrand = new Swiper('.swiper-brand', {
  
     breakpoints: {
         320: {
-            slidesPerView: 2,
+            slidesPerView: 3.8,
+            spaceBetween: 20
+        },
+        380: {
+            slidesPerView: 3.4,
             spaceBetween: 20
         },
         420: {
-            slidesPerView: 3,
+            slidesPerView: 4,
             spaceBetween: 20
         },
         540: {
-            slidesPerView: 4,
+            slidesPerView: 4.5,
             spaceBetween: 20
         },
         600: {
@@ -46,6 +50,7 @@ const swiperService = new Swiper('.swiper-service', {
 
     slidesPerView: 3,
     spaceBetween: 30,
+    freeMode: true,
  
     breakpoints: {
         320: {
@@ -88,7 +93,7 @@ const swiperService = new Swiper('.swiper-service', {
 });
 
 const swiperChoose = new Swiper('.swiper-choose', {
- 
+    freeMode: true,
     breakpoints: {
         320: {
             allowTouchMove: true,
@@ -155,6 +160,42 @@ const swiperReviews = new Swiper('.swiper-reviews', {
         },
         1200: {
             slidesPerView: 3,
+            spaceBetween: 20
+        }
+    },
+});
+const swiperTeam = new Swiper('.swiper-team', {
+
+    slidesPerView: 3,
+    spaceBetween: 30,
+ 
+    breakpoints: {
+        320: {
+            slidesPerView: 1.2,
+            spaceBetween: 20
+        },
+        480: {
+            slidesPerView: 1.7,
+            spaceBetween: 20
+        },
+        768: {
+            slidesPerView: 2.6,
+            spaceBetween: 20
+        },
+        1025: {
+            slidesPerView: 2.2,
+            spaceBetween: 20
+        },
+        1140: {
+            slidesPerView: 2.5,
+            spaceBetween: 20
+        },
+        1340: {
+            slidesPerView: 3,
+            spaceBetween: 20
+        },
+        1580: {
+            slidesPerView: 3.4,
             spaceBetween: 20
         }
     },

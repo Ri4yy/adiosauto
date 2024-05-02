@@ -1,0 +1,51 @@
+.message {
+    position: relative;
+    background-color: #fff;
+    border-radius: 20px 20px 20px 0;
+    padding: 20px 24px;
+    max-width: 400px;
+
+    @media(max-width: 1200px) {
+        border-radius: 20px 0 20px 20px;
+    }
+    @media(max-width: $breakpoint480) {
+        padding: 9px 12px;
+        max-width: 100%; 
+        border-radius: 15px;
+    }
+
+    &::before {
+        content: url('../img/icons/triangle.svg');
+        position: absolute;
+        bottom: -3px;
+        left: -18px;
+        width: 27px;
+        height: 22px;
+
+        @media(max-width: 1200px) {
+            bottom: unset;
+            left: unset;
+            top: -13px;
+            right: -5px;
+        }
+        @media(max-width: $breakpoint480) {
+            content: '';
+        }
+    }
+
+
+    &__text {
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 130%;
+        color: $dark-gray;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 18px;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 14px;
+            font-weight: 400;
+        }
+    }
+}

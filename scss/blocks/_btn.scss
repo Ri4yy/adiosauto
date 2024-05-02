@@ -103,4 +103,22 @@
             }
         }
     }
+
+    &--white {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 80px;
+        padding: 16px 20px;
+        background-color: #fff;
+        color: $accent-color;
+        font-weight: 500;
+        font-size: 18px;
+
+        @media(max-width: $breakpoint480) {
+            padding: 14px 20px;
+            font-size: 14px;
+            bottom: 60px;
+        }
+    }
 }

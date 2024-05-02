@@ -1,0 +1,24 @@
+.b-404 {
+    position: relative;
+    background-image: url('../img/photo/bg-404.png');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 100%;
+    height: 740px;
+
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // max-height: 740px;
+    // background-size: 100%;
+    // aspect-ratio: 1716/740;
+
+    @media(max-width: $breakpoint768) {
+        height: 560px;
+    }
+    @media(max-width: $breakpoint480) {
+        height: 480px;
+        background-size: 300%;
+        background-position: 50%;
+    }
+}

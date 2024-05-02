@@ -9,6 +9,9 @@
     @media(max-width: $breakpoint1024) {
         padding: 0;
     }
+    @media(max-width: $breakpoint480) {
+        border-radius: 25px;
+    }
 
     &__top {
         position: relative;
@@ -22,37 +25,76 @@
         }
     }
     &__description {
-        max-width: 600px;
         z-index: 1;
+
+        &--type_1 {
+            max-width: 600px;
+        }
+        &--type_2 {
+            max-width: 750px;
+        }
     }
     &__img {
         position: absolute;
-        top: 0;
-        right: 160px;
+
         display: flex;
         aspect-ratio: 16/9;
 
-        @media(max-width: $breakpoint1440) {
-            right: calc(80 * 100% / 1920);
-            max-width: 520px;
-            top: 60%;
-            transform: translateY(-50%);
+        &--service {
+            aspect-ratio: unset;
+            z-index: 2;
+
+            @media(min-width: $breakpoint1440) {
+                top: 30% !important;
+            }
         }
-        @media(max-width: $breakpoint1024) {
-            max-width: 420px;
-            top: 70%;
-            right: calc(-200 * 100% / 1920);
+
+        &--type_1 {
+            top: 0;
+            right: 160px;
+
+            @media(max-width: $breakpoint1440) {
+                right: calc(80 * 100% / 1920);
+                max-width: 520px;
+                top: 60%;
+                transform: translateY(-50%);
+            }
+            @media(max-width: $breakpoint1024) {
+                max-width: 420px;
+                top: 70%;
+                right: calc(-200 * 100% / 1920);
+            }
+            @media(max-width: $breakpoint660) {
+                max-height: 220px;
+                top: 150px;
+                transform: unset;
+            }
+            @media(max-width: $breakpoint480) {
+                top: 110px;
+                right: unset;
+                left: 0;
+            }
         }
-        @media(max-width: $breakpoint660) {
-            max-height: 220px;
-            top: 150px;
-            transform: unset;
+        &--type_2 {
+            top: 0;
+            right: -20px;
+            z-index: 2;
+            aspect-ratio: 1;
+
+            @media(max-width: $breakpoint1280) {
+                max-width: 400px;
+                top: 130px;
+            }
+            @media(max-width: $breakpoint768) {
+                max-width: 300px;
+            }
+            @media(max-width: $breakpoint768) {
+                max-width: 250px;
+                top: 25%;
+            }
         }
-        @media(max-width: $breakpoint480) {
-            top: 110px;
-            right: unset;
-            left: 0;
-        }
+
+
     }
 }
 
@@ -115,6 +157,9 @@
     z-index: 1;
     @media(max-width: $breakpoint768) {
         padding: 28px 16px;
+    }
+    @media(max-width: $breakpoint480) {
+        border-radius: 25px;
     }
 
     &__text {

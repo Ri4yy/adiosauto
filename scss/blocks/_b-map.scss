@@ -1,0 +1,18 @@
+.b-map {
+    border-radius: $main-radius;
+    overflow: hidden;
+    margin-top: 40px;
+
+    @media(max-width: $breakpoint660) {
+        margin-top: 20px;
+    }
+
+    & iframe {
+        min-height: 520px;
+        width: 100%;
+
+        @media(max-width: 1200px) {
+            min-height: 400px;
+        }
+    }
+}

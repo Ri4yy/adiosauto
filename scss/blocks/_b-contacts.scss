@@ -1,0 +1,121 @@
+.b-contacts {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(550px, 1fr));
+    gap: 20px;
+
+    @media(max-width: $breakpoint660) {
+        grid-template-columns: unset;  
+        gap: 10px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        @media(max-width: $breakpoint660) {
+            gap: 8px;    
+        }
+    }
+    &__info {
+        display: flex;
+        flex-direction: column;
+        gap: 36px;
+        padding: 54px 42px; 
+        border-radius: $main-radius;
+        background-color: #fff;
+
+        @media(max-width: $breakpoint660) {
+            gap: 20px;   
+            padding: 20px 16px; 
+            border-radius: 20px;
+        }
+        @media(max-width: $breakpoint480) {
+            gap: 16px;
+        }
+    }
+    &__header {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+    &__title {
+        font-weight: 400;
+        font-size: 18px;
+        color: $main-color;
+
+        @media(max-width: $breakpoint660) {
+            font-size: 14px;   
+        }
+    }
+    &__text {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 130%;
+        color: $accent-color;
+        width: fit-content;
+        @media(max-width: $breakpoint660) {
+            font-size: 19px;
+        }
+    }
+    &__social {
+        display: flex;
+        gap: 12px;
+
+        @media(max-width: $breakpoint660) {
+            gap: 8px;
+        }
+
+        & img {
+            height: 45px;
+
+            @media(max-width: $breakpoint660) {
+                height: 32px;
+            }
+        }
+    }
+}
+
+.contacts-form {
+    position: relative;
+    background-color: $accent-color;
+    padding: 40px 48px;
+    border-radius: $main-radius;
+    background-image: url('../img/photo/phone.png');
+    background-repeat: no-repeat;
+    background-position: 123%;
+
+    @media(max-width: $breakpoint660) {
+        padding: 28px 16px 152px 16px;
+        background-position: 100% 100%;
+        background-size: 240px;
+        border-radius: 20px;
+    }
+    @media(max-width: $breakpoint480) {
+        background-position: 50% 140%;
+    }
+
+    &__subtitle {
+        margin-top: 18px;
+        font-weight: 500;
+        font-size: 18px;
+        color: #fff;
+        max-width: 586px;
+
+        @media(max-width: $breakpoint660) {
+            font-size: 14px;
+            margin-top: 12px;
+        }
+    }
+}
+
+.contacts-subtitle {
+    margin-top: 16px;
+    font-weight: 500;
+    font-size: 18px;
+    color: $dark-gray;
+
+    @media(max-width: $breakpoint480) {
+        margin-top: 12px;
+    }
+}

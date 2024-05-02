@@ -1,0 +1,81 @@
+.b-dignity {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(650px, 1fr));
+    gap: 20px;
+    @media(max-width: 1399px) {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    }
+    @media(max-width: $breakpoint480) {
+        grid-template-columns: unset;
+    }
+
+    &__item {
+        display: flex;
+        gap: 52px;
+        background-color: #fff;
+        border-radius: $main-radius;
+        padding: 32px 42px;
+
+        @media(max-width: 1399px) {
+            flex-direction: column;
+            gap: 26px;
+        }
+        @media(max-width: $breakpoint1024) {
+            padding: 20px;
+        }
+        @media(max-width: $breakpoint768) {
+            padding: 12px 10px;
+            gap: 20px;
+            border-radius: 20px;
+        }
+    }
+    &__icon {
+        display: flex;
+        width: 160px;
+        height: 160px;
+
+        @media(max-width: $breakpoint1024) {
+            width: 120px;
+            height: 120px;
+        }
+        @media(max-width: $breakpoint768) {
+            width: 80px;
+            height: 80px;
+        }
+    }
+    &__description {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        @media(max-width: $breakpoint1024) {
+            gap: 10px;
+        }
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 28px;
+        line-height: 130%;
+        color: $accent-color;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 24px;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 19px;
+        }
+    }
+    &__text {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 130%;
+        color: $dark-gray;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 14px;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 12px;
+        }
+    }
+}
