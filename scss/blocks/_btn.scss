@@ -11,11 +11,21 @@
         @media(max-width: $breakpoint1280) {
             font-size: 16px;
         }
-        @media(max-width: $breakpoint1024) {
+        @media(max-width: 1100px) {
             margin-left: auto;
         }
         @media(max-width: $breakpoint480) {
             display: none;
+        }
+    }
+    &--mobile {
+        @media(max-width: 1100px) {
+            display: none;
+        }
+        @media(max-width: $breakpoint480) {
+            display: flex;
+            margin-left: 0;
+            width: fit-content;
         }
     }
     &--gray {
