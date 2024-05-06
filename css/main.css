@@ -964,6 +964,14 @@ body {
     bottom: 60px;
   }
 }
+.btn--calc {
+  margin-top: 53px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  padding: 16px 20px;
+  background-color: #D31313;
+}
 
 .hero {
   position: relative;
@@ -1457,6 +1465,13 @@ body {
   .b-info p {
     font-size: 14px;
   }
+}
+.b-info__wrapper {
+  max-height: 280px;
+  overflow: hidden;
+}
+.b-info__wrapper.active {
+  max-height: 100%;
 }
 .b-info__title {
   margin-top: 40px;
@@ -2995,21 +3010,32 @@ body {
   background-color: #282525;
   padding: 40px 48px;
   border-radius: 35px;
+}
+@media (max-width: 660px) {
+  .contacts-form {
+    padding: 28px 16px 152px 16px;
+    border-radius: 20px;
+  }
+}
+.contacts-form--bg {
   background-image: url("../img/photo/phone.png");
   background-repeat: no-repeat;
   background-position: 123%;
 }
 @media (max-width: 660px) {
-  .contacts-form {
-    padding: 28px 16px 152px 16px;
+  .contacts-form--bg {
     background-position: 100% 100%;
     background-size: 240px;
-    border-radius: 20px;
   }
 }
 @media (max-width: 480px) {
-  .contacts-form {
+  .contacts-form--bg {
     background-position: 50% 140%;
+  }
+}
+@media (max-width: 1024px) {
+  .contacts-form--car {
+    padding-bottom: 150px;
   }
 }
 .contacts-form__subtitle {
@@ -3018,6 +3044,11 @@ body {
   font-size: 18px;
   color: #fff;
   max-width: 586px;
+}
+@media (max-width: 768px) {
+  .contacts-form__subtitle {
+    font-size: 16px;
+  }
 }
 @media (max-width: 660px) {
   .contacts-form__subtitle {
@@ -3529,12 +3560,16 @@ body {
 .modal.active::before {
   pointer-events: all;
 }
+.modal.active .modal__body {
+  pointer-events: all;
+}
 .modal__body {
   position: fixed;
   top: 50%;
   left: 50%;
   translate: -50% -50%;
   z-index: 8;
+  pointer-events: none;
 }
 @media (max-width: 480px) {
   .modal__body {
@@ -3627,5 +3662,323 @@ body {
   .close-modal {
     top: 24px;
     right: 24px;
+  }
+}
+
+.b-calc__title {
+  max-width: 960px;
+  text-align: center;
+  margin: 0 auto;
+}
+.b-calc__wrapper {
+  margin-top: 60px;
+  background-color: #fff;
+  border-radius: 35px;
+  padding: 60px 48px;
+}
+@media (max-width: 480px) {
+  .b-calc__wrapper {
+    padding: 20px 10px;
+    border-radius: 20px;
+  }
+}
+.b-calc__subtitle {
+  margin-top: 16px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #5C5C5C;
+}
+@media (max-width: 480px) {
+  .b-calc__subtitle {
+    font-size: 12px;
+  }
+}
+
+.b-properties {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  gap: 50px;
+}
+@media (max-width: 540px) {
+  .b-properties {
+    grid-template-columns: unset;
+  }
+}
+@media (max-width: 480px) {
+  .b-properties {
+    margin-top: 32px;
+    gap: 32px;
+  }
+}
+.b-properties__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+.b-properties__wrapper {
+  margin-top: 20px;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+}
+@media (max-width: 480px) {
+  .b-properties__wrapper {
+    margin-top: 16px;
+  }
+}
+.b-properties__btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 90px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  cursor: pointer;
+}
+.b-properties__btn svg {
+  pointer-events: none;
+}
+
+.b-properties-top__wrapper {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .b-properties-top__wrapper {
+    margin-top: 16px;
+  }
+}
+
+.b-properties-bottom {
+  margin-top: 34px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .b-properties-bottom {
+    gap: 32px;
+  }
+}
+.b-properties-bottom__input {
+  position: relative;
+  margin-top: 20px;
+}
+@media (max-width: 480px) {
+  .b-properties-bottom__input {
+    margin-top: 16px;
+  }
+}
+.b-properties-bottom__input input {
+  border: 1px solid #E8E8E8;
+  border-radius: 12px;
+  padding: 12px 50px 12px 12px;
+  width: 100%;
+}
+.b-properties-bottom__input input::-webkit-input-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #C9C9C9;
+}
+.b-properties-bottom__input input::-moz-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #C9C9C9;
+}
+.b-properties-bottom__input input:-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #C9C9C9;
+}
+.b-properties-bottom__input input::-ms-input-placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #C9C9C9;
+}
+.b-properties-bottom__input input::placeholder {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #C9C9C9;
+}
+.b-properties-bottom__input span {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #282525;
+  pointer-events: none;
+}
+
+.b-properties-info {
+  margin-top: 44px;
+}
+.b-properties-info__wrapper {
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 10px;
+}
+@media (max-width: 480px) {
+  .b-properties-info__wrapper {
+    margin-top: 16px;
+  }
+}
+
+.toggle {
+  display: inline-block;
+}
+.toggle input[type=radio] {
+  display: none;
+}
+.toggle input[type=radio]:checked + label {
+  border-color: #282525;
+}
+.toggle input[type=radio]:checked + label::after {
+  content: url("../img/icons/toggle-done.svg");
+  position: absolute;
+  top: -10px;
+  right: -10px;
+}
+.toggle label {
+  position: relative;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: #282525;
+  border: 1px solid #E8E8E8;
+  border-radius: 12px;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+.toggle--1 label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 90px;
+  width: 100%;
+  aspect-ratio: 1;
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+}
+.toggle--1 label img {
+  pointer-events: none;
+  width: 70%;
+}
+.toggle--2 label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 11px;
+}
+.toggle--3 label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7px 12px;
+  height: 90px;
+}
+.toggle--3 label span {
+  margin-top: 12px;
+}
+.toggle--3 label img {
+  -webkit-margin-before: auto;
+          margin-block-start: auto;
+}
+
+.b-calc-form {
+  position: relative;
+  padding-bottom: 120px;
+}
+@media (max-width: 1024px) {
+  .b-calc-form {
+    padding-bottom: 70px;
+  }
+}
+.b-calc-form__left {
+  width: 60%;
+}
+@media (max-width: 1024px) {
+  .b-calc-form__left {
+    width: 80%;
+  }
+}
+@media (max-width: 768px) {
+  .b-calc-form__left {
+    width: 100%;
+  }
+}
+.b-calc-form__img {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+@media (max-width: 1680px) {
+  .b-calc-form__img {
+    width: 70%;
+  }
+}
+@media (max-width: 1024px) {
+  .b-calc-form__img {
+    width: 100%;
+    max-width: 800px;
+    right: -10.4166666667%;
+  }
+}
+@media (max-width: 768px) {
+  .b-calc-form__img {
+    max-width: 650px;
+    right: -13.0208333333%;
+  }
+}
+@media (max-width: 660px) {
+  .b-calc-form__img {
+    width: 645px;
+    right: -300px;
+  }
+}
+@media (max-width: 480px) {
+  .b-calc-form__img {
+    width: 645px;
+    right: -360px;
   }
 }

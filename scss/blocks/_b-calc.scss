@@ -1,0 +1,151 @@
+.b-calc {
+
+    &__title {
+        max-width: 960px;
+        text-align: center;
+        margin: 0 auto;
+    }
+    &__wrapper {
+        margin-top: 60px;
+        background-color: #fff;
+        border-radius: $main-radius;
+        padding: 60px 48px;
+
+        @media(max-width: $breakpoint480) {
+            padding: 20px 10px;
+            border-radius: 20px;
+        }
+    }
+    &__subtitle {
+        margin-top: 16px;
+        font-weight: 500;
+        font-size: 18px;
+        color: $dark-gray;
+
+        @media(max-width: $breakpoint480) {
+            font-size: 12px;
+        }
+    }
+}
+
+
+.b-properties {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 50px;
+
+    @media(max-width: 540px) {
+        grid-template-columns: unset;
+    }
+    @media(max-width: $breakpoint480) {
+        margin-top: 32px;
+        gap: 32px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__wrapper {
+        margin-top: 20px;
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+
+        @media(max-width: $breakpoint480) {
+            margin-top: 16px;
+        }
+    }
+    &__btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 90px;
+        aspect-ratio: 1;
+        border-radius: 8px;
+        border: 1px solid #f0f0f0;
+        cursor: pointer;
+
+        & svg {
+            pointer-events: none;
+        }
+    }
+}
+
+
+.b-properties-top {
+
+    &__wrapper {
+        margin-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+
+        @media(max-width: $breakpoint480) {
+            margin-top: 16px;
+        }
+    }
+}
+
+
+.b-properties-bottom {
+    margin-top: 34px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 10px;
+
+    @media(max-width: $breakpoint480) {
+        gap: 32px;
+    }
+
+    &__input {
+        position: relative;
+        margin-top: 20px;
+
+        @media(max-width: $breakpoint480) {
+            margin-top: 16px;
+        }
+
+        & input {
+            border: 1px solid $secondary-color;
+            border-radius: 12px;
+            padding: 12px 50px 12px 12px;
+            width: 100%;
+
+            &::placeholder {
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 130%;
+                color: #C9C9C9;
+            }
+        }
+        & span {
+            position: absolute;
+            right: 12px;
+            top: 12px;
+
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 130%;
+            color: $accent-color;
+            pointer-events: none;
+        }
+    }
+}
+
+.b-properties-info {
+    margin-top: 44px;
+    
+    &__wrapper {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+
+        @media(max-width: $breakpoint480) {
+            margin-top: 16px;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+.b-calc-form {
+    position: relative;
+    padding-bottom: 120px;
+
+    @media(max-width: $breakpoint1024) {
+        padding-bottom: 70px;
+    }
+
+    &__left {
+        width: 60%;
+
+        @media(max-width: $breakpoint1024) {
+            width: 80%;
+        }
+        @media(max-width: $breakpoint768) {
+            width: 100%;
+        }
+    }
+    &__img {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @media(max-width: 1680px) {
+            width: 70%;
+        }
+        @media(max-width: $breakpoint1024) {
+            width: 100%;
+            max-width: 800px;
+            right: calc(-200 * 100% / 1920);
+        }
+        @media(max-width: $breakpoint768) {
+            max-width: 650px;
+            right: calc(-250 * 100% / 1920);
+        }
+        @media(max-width: $breakpoint660) {
+            width: 645px;
+            right: -300px;
+        }
+        @media(max-width: $breakpoint480) {
+            width: 645px;
+            right: -360px;
+        }
+    }
+}

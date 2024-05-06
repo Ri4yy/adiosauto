@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../libs/swiper-bundle.min.css">
+    <title>Калькулятор</title>
+</head>
+<body>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <div class="b-calc">
+                    <h1 class="title-h1 b-calc__title">Онлайн калькулятор стоимости автомобиля</h1>
+                    <form type="" method="POST" class="b-calc__wrapper">
+                        <h2 class="title-h2">Бесплатная оценка автомобиля</h2>
+                        <p class="b-calc__subtitle">Заполните форму и получите предварительный расчет цены за 15 секунд</p>
+                        <div class="b-properties">
+                            <div class="b-properties__item">
+                                <h3 class="title-h3">Марка автомобиля:</h3>
+                                <div class="b-properties__wrapper brand-container">
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-1" type="radio" name="brand" value="audi" checked>
+                                        <label for="brand-1"><img src="../img/logo/audi.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-2" type="radio" name="brand" value="hyundai">
+                                        <label for="brand-2"><img src="../img/logo/hyundai.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-3" type="radio" name="brand" value="mb">
+                                        <label for="brand-3"><img src="../img/logo/mb.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-4" type="radio" name="brand" value="cherry">
+                                        <label for="brand-4"><img src="../img/logo/cherry.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-5" type="radio" name="brand" value="chevrolet">
+                                        <label for="brand-5"><img src="../img/logo/chevrolet.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-6" type="radio" name="brand" value="bmw">
+                                        <label for="brand-6"><img src="../img/logo/bmw.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-7" type="radio" name="brand" value="cadillac">
+                                        <label for="brand-7"><img src="../img/logo/cadillac.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-8" type="radio" name="brand" value="nissan">
+                                        <label for="brand-8"><img src="../img/logo/nissan.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-9" type="radio" name="brand" value="mazda">
+                                        <label for="brand-9"><img src="../img/logo/mazda.png" alt=""></label>
+                                    </div>
+                                    <div class="toggle toggle--1">
+                                        <input id="brand-10" type="radio" name="brand" value="jaguar">
+                                        <label for="brand-10"><img src="../img/logo/jaguar.png" alt=""></label>
+                                    </div>
+                                    <div class="b-properties__btn">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2V22" stroke="#D31313" stroke-width="2.5" stroke-linecap="round" />
+                                            <path d="M22 12L2 12" stroke="#D31313" stroke-width="2.5" stroke-linecap="round" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-properties__item">
+                                <div class="b-properties-top">
+                                    <h3 class="title-h3">Модель автомобиля:</h3>
+                                    <div class="b-properties-top__wrapper model-container">
+                                        <div class="toggle toggle--2">
+                                            <input id="model-1" type="radio" name="model" value="alero" checked>
+                                            <label for="model-1">ALERO</label>
+                                        </div>
+                                        <div class="toggle toggle--2">
+                                            <input id="model-2" type="radio" name="model" value="aveo">
+                                            <label for="model-2">AVEO</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b-properties-bottom">
+                                    <div class="b-properties-bottom__item">
+                                        <h3 class="title-h3">Год выпуска:</h3>
+                                        <div class="b-properties-bottom__input">
+                                            <input type="number" name="year" placeholder="Введите значение">
+                                            <span>год</span>
+                                        </div>
+                                    </div>
+                                    <div class="b-properties-bottom__item">
+                                        <h3 class="title-h3">Пробег:</h3>
+                                        <div class="b-properties-bottom__input">
+                                            <input type="number" name="probeg" placeholder="Введите значение">
+                                            <span>км</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="b-properties__item">
+                                <div class="b-properties-top">
+                                    <h3 class="title-h3">Наличие повреждений:</h3>
+                                    <div class="b-properties-top__wrapper">
+                                        <div class="toggle toggle--2">
+                                            <input id="damage-1" type="radio" name="damage" value="no" checked>
+                                            <label for="damage-1">Нет</label>
+                                        </div>
+                                        <div class="toggle toggle--2">
+                                            <input id="damage-2" type="radio" name="damage" value="brakes">
+                                            <label for="damage-2">Тормозная система</label>
+                                        </div>
+                                        <div class="toggle toggle--2">
+                                            <input id="damage-3" type="radio" name="damage" value="engine">
+                                            <label for="damage-3">Двигатель</label>
+                                        </div>
+                                        <div class="toggle toggle--2">
+                                            <input id="damage-4" type="radio" name="damage" value="battery">
+                                            <label for="damage-4">Аккумулятор</label>
+                                        </div>
+                                        <div class="toggle toggle--2">
+                                            <input id="damage-5" type="radio" name="damage" value="electrician">
+                                            <label for="damage-5">Электрика</label>
+                                        </div>
+                                        <div class="toggle toggle--2">
+                                            <input id="damage-6" type="radio" name="damage" value="wheel">
+                                            <label for="damage-6">Ходовая часть</label>
+                                        </div>
+                                        <div class="toggle toggle--2">
+                                            <input id="damage-7" type="radio" name="damage" value="unknown">
+                                            <label for="damage-7">Неизвестно</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="b-properties-info">
+                                    <h3 class="title-h3">Информация о состоянии:</h3>
+                                    <div class="b-properties-info__wrapper">
+                                        <div class="toggle toggle--3">
+                                            <input id="status-1" type="radio" name="status" value="excellent" checked>
+                                            <label for="status-1">
+                                                <img src="../img/icons/excellent.svg" alt="">
+                                                <span>Отличное</span>
+                                            </label>
+                                        </div>
+                                        <div class="toggle toggle--3">
+                                            <input id="status-2" type="radio" name="status" value="good">
+                                            <label for="status-2">
+                                                <img src="../img/icons/fine.svg" alt="">
+                                                <span>Хорошее</span>
+                                            </label>
+                                        </div>
+                                        <div class="toggle toggle--3">
+                                            <input id="status-3" type="radio" name="status" value="problems">
+                                            <label for="status-3">
+                                                <img src="../img/icons/problems.svg" alt="">
+                                                <span>Проблемный</span>
+                                            </label>
+                                        </div>
+                                        <div class="toggle toggle--3">
+                                            <input id="status-4" type="radio" name="status" value="broken">
+                                            <label for="status-4">
+                                                <img src="../img/icons/broken.svg" alt="">
+                                                <span>Битый</span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <button class="btn btn--calc">Узнать стоимость</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="b-calc-form">
+                    <div class="b-calc-form__left contacts-form contacts-form--car">
+                        <h2 class="title-h2 title-h2--white title-h2--form">Срочная оценка авто по телефону</h2>
+                        <p class="contacts-form__subtitle">Оставьте заявку на бесплатную оценку и консультацию</p>
+                        <form action="" method="POST" class="form form-main">
+                            <input type="text" name="name" class="input form-main__input" placeholder="Ваше имя">
+                            <input type="tel" name="phone" class="input form-main__input" placeholder="Ваш телефон">
+                            <button type="submit" class="btn btn--form">
+                                <span>Оценить авто</span>
+                                <div class="btn__circle btn__circle--black">
+                                    <svg width="23" height="21" viewBox="0 0 23 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12.7998 1.5L20.8998 10.5L12.7998 19.5" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                                        <path d="M20 10.5L2 10.5" stroke="white" stroke-width="2.5" stroke-linecap="round" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <small>Нажимая на кнопку, я принимаю условия соглашения</small>
+                        </form>
+                    </div>
+                    <img src="../img/photo/form-car.png" class="b-calc-form__img" alt="">
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__info">
+                    <a href="" class="logo"><img src="../img/icons/logo.svg" alt=""></a>
+                    <p class="footer__address">г. Москва, ул. Иванова 15</p>
+                    <p class="footer__copyright">© 2024 AdiosAuto Все права защищены</p>
+                    <ul class="footer-social footer-social--inner">
+                        <li class="footer-social__item">
+                            <a href="tel:+78093333333" class="footer-social__link">+7 809 333-33-33</a>
+                        </li>
+                        <li class="footer-social__item">
+                            <a href="mailto:info@site.ru" class="footer-social__link">info@site.ru</a>
+                        </li>
+                        <li class="footer-social__item">
+                            <a href="" class="footer-social__link"><img src="../img/icons/tg.svg" alt=""></a>
+                            <a href="" class="footer-social__link"><img src="../img/icons/wa.svg" alt=""></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="footer__menu">
+                    <p class="footer__title">Наши услуги</p>
+                    <ul class="footer-list">
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп авто</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп битых авто</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп кредитных автомобилей</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп автомобилей в залоге</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Скупка автомобилей на запчасти</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп автомобилей в залоге</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп авто</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Скупка автомобилей на запчасти</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп битых авто</a>
+                        </li>
+                        <li class="footer-list__item">
+                            <a href="" class="footer-list__link">Выкуп кредитных автомобилей</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="footer-social footer-social--menu">
+                    <li class="footer-social__item">
+                        <a href="tel:+78093333333" class="footer-social__link">+7 809 333-33-33</a>
+                    </li>
+                    <li class="footer-social__item">
+                        <a href="mailto:info@site.ru" class="footer-social__link">info@site.ru</a>
+                    </li>
+                    <li class="footer-social__item">
+                        <a href="" class="footer-social__link"><img src="../img/icons/tg.svg" alt=""></a>
+                        <a href="" class="footer-social__link"><img src="../img/icons/wa.svg" alt=""></a>
+                    </li>
+                </ul>
+                <p class="footer__copyright">© 2024 AdiosAuto Все права защищены</p>
+            </div>
+        </div>
+    </footer>
+
+<script src="../libs/jquery.min.js"></script>
+<script src="../libs/swiper-bundle.min.js"></script>
+<script src="../js/slider.js"></script>
+<script src="../js/script.js"></script>
+</body>
+</html>

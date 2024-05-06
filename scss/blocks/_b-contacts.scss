@@ -81,18 +81,34 @@
     background-color: $accent-color;
     padding: 40px 48px;
     border-radius: $main-radius;
-    background-image: url('../img/photo/phone.png');
-    background-repeat: no-repeat;
-    background-position: 123%;
 
     @media(max-width: $breakpoint660) {
         padding: 28px 16px 152px 16px;
-        background-position: 100% 100%;
-        background-size: 240px;
         border-radius: 20px;
     }
-    @media(max-width: $breakpoint480) {
-        background-position: 50% 140%;
+
+
+    &--bg {
+        background-image: url('../img/photo/phone.png');
+        background-repeat: no-repeat;
+        background-position: 123%;
+
+        @media(max-width: $breakpoint660) {
+            background-position: 100% 100%;
+            background-size: 240px;
+        }
+        @media(max-width: $breakpoint480) {
+            background-position: 50% 140%;
+        }
+    }
+    &--car {    
+        @media(max-width: $breakpoint1024) {
+            padding-bottom: 150px;
+        }
+
+        & .b-calc-form__img {
+            
+        }
     }
 
     &__subtitle {
@@ -102,6 +118,9 @@
         color: #fff;
         max-width: 586px;
 
+        @media(max-width: $breakpoint768) {
+            font-size: 16px;
+        }
         @media(max-width: $breakpoint660) {
             font-size: 14px;
             margin-top: 12px;
