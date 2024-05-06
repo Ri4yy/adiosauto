@@ -3,6 +3,15 @@
     border: 2px solid $secondary-color;
     padding: 16px 20px;
     color: #fff;
+    transition: all .3s;
+
+    &:focus {
+        border-color: $dark-gray;
+
+        &::placeholder {
+            color: $dark-gray;
+        }
+    }
 
     @media(max-width: $breakpoint768) {
         padding: 12px 14px;
@@ -15,6 +24,7 @@
         font-weight: 500;
         font-size: 18px;
         color: #fff;
+        transition: all .3s;
 
         @media(max-width: $breakpoint480) {
             font-size: 14px;

@@ -41,6 +41,10 @@ body {
         }
     }
 
+    &__bottom {
+        margin-top: 32px;
+    }
+
     @media (max-width: 1680px) {
         padding: 0 10px;
     }
@@ -71,7 +75,7 @@ body {
 }
 .title-h1 {
     font-family: $secondary-font;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 68px;
     line-height: 1;
     color: $accent-color;
@@ -95,7 +99,7 @@ body {
 
 .title-h2 {
     font-family: $secondary-font;
-    font-weight: 400;
+    font-weight: 600;
     font-size: 36px;
     line-height: 120%;
     color: $accent-color;
