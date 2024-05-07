@@ -18,6 +18,11 @@ nav {
         gap: 4px;
     }
 
+    &__item:not(:has(.menu__drop)):hover {
+        box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.25);
+        background: #f9f9f9;
+        border-radius: 20px;
+    }
     &__item {
         position: relative;
         padding: 8px 14px;
