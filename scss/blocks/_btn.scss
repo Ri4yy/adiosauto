@@ -202,6 +202,16 @@
         color: #fff;
         padding: 16px 20px;
         background-color: $main-color;
+
+        &:hover {
+            background-color: #c01010;;
+        }
+
+        @media(max-width: $breakpoint480) {
+            width: 100%;
+            padding: 12px 20px;
+            font-size: 14px;
+        }
     }
 }
 

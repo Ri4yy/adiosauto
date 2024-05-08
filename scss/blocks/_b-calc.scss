@@ -49,24 +49,46 @@
     }
 
     &__wrapper {
-        margin-top: 20px;
+        position: relative;
+        padding-top: 20px;
+        padding-right: 10px;
         display: grid;
-        gap: 10px;
-        grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(85px, 1fr));
+        grid-template-rows: repeat(2, 1fr);
+        grid-auto-rows: 0;
+        overflow-y: hidden;
+
+        &.active {
+            grid-auto-rows: auto;
+            overflow-y: visible;
+        }
 
         @media(max-width: $breakpoint480) {
-            margin-top: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(65px, 1fr));
+            padding-top: 16px;
         }
     }
     &__btn {
+        position: absolute;
+        right: 15px;
+        bottom: 5px;
+        z-index: 2;
+
+        max-width: 110px;
+        background-color: #fff;
+
         display: flex;
         justify-content: center;
         align-items: center;
-        max-width: 90px;
         aspect-ratio: 1;
         border-radius: 8px;
         border: 1px solid #f0f0f0;
         cursor: pointer;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: $secondary-color;
+        }
 
         & svg {
             pointer-events: none;
@@ -74,11 +96,21 @@
     }
 }
 
+.model-container {
+    max-height: 175px;
+    overflow: hidden;
 
+    &.active {
+        max-height: 100%;
+    }
+    @media(max-width: $breakpoint480) {
+        max-height: 142px;
+    }
+}
 .b-properties-top {
 
     &__wrapper {
-        margin-top: 20px;
+        padding-top: 20px;
         display: flex;
         flex-wrap: wrap;
         gap: 10px;
@@ -146,6 +178,40 @@
 
         @media(max-width: $breakpoint480) {
             margin-top: 16px;
+        }
+    }
+}
+
+.b-model {
+    position: relative;
+
+    &__more {
+        display: none;
+        justify-content: center;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        padding: 10px;
+        border: 1px solid #E8E8E8;
+        background-color: #fff;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: background-color .3s;
+
+        &:hover {
+            background-color: #E8E8E8;
+        }
+
+        @media(max-width: $breakpoint480) {
+            padding: 8px;
+        }
+
+        & svg {
+            @media(max-width: $breakpoint480) {
+                width: 70%;
+            }
         }
     }
 }

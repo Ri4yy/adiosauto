@@ -27,65 +27,129 @@ document.addEventListener('DOMContentLoaded' , function() {
     $('.btn--gray').click((e) => {
         $(e.target).closest('.b-info').find('.b-info__wrapper').toggleClass('active')
     })
-    
-
 
     let containerMark = document.querySelector('.brand-container'),
     containerModel = document.querySelector('.model-container');
     let data;
 
-fetch('/js/api.json')
-.then((response) => {
-    return response.json();
-})
-.then((responseData) => {
-    data = responseData;
-    console.log(data)
-    data.forEach(el => {
-        getMarks(el.id)
-    });
-});
-
-containerMark.addEventListener('change', (e) => {
-    clearModels();
-
-    let marks = e.target.value;
-
-    let selectedMark = data.find(el => el.id === marks);
-
-    if (selectedMark) {
-        getModels(selectedMark.models);
-    }
-})
-
-
-function getMarks(mark) {
-
-    // $('.brand-container').append(`
-    // <div class="toggle toggle--1">
-    //     <input id="brand-${mark}" type="radio" name="brand" value="${mark}">
-    //     <label for="brand-${mark}"><img src="../img/logo/audi.png" alt=""></label>
-    // </div>
-    // `);
-}
-
-function getModels(models) {
-    models.forEach((el) => {
-        let option = document.createElement("option");
-        option.value = el.name;
-        option.innerHTML = el.name;
-        containerModel.append(option);
+    fetch('/js/api.json')
+    .then((response) => {
+        return response.json();
     })
-}
+    .then((responseData) => {
+        data = responseData;
+        
+        data.forEach(el => {
+            getMarks(el.id)
+        });
+    });
 
-function clearModels() {
-    while (containerModel.options.length > 0) {
-        containerModel.remove(0);
+    containerMark.addEventListener('change', (e) => {
+        clearModels();
+
+        let marks = $(e.target).closest('.toggle').find('input').val();
+
+        let selectedMark = data.find(el => el.id === marks);
+
+        if (selectedMark) {
+            getModels(selectedMark.models);
+        }
+    })
+
+
+    function getMarks(mark) {
+
+        $('.brand-container').append(`
+        <div class="toggle toggle--1">
+            <input id="brand-${mark}" type="radio" name="brand" value="${mark}">
+            <label for="brand-${mark}"><img src="../img/logo/${mark}.png" alt=""></label>
+        </div>
+        `);
+
+        updateBtnClass();
+        
     }
 
-    let initialOption = document.createElement("option");
-    initialOption.value = "";
-    initialOption.innerHTML = "Выберите модель авто";
-    containerModel.appendChild(initialOption);
-}
+    function getModels(models) {
+        models.forEach((el) => {
+            $('.model-container').append(`
+                <div class="toggle toggle--2">
+                    <input id="model-${el.id}" type="radio" name="model" value="${el.name}">
+                    <label for="model-${el.id}">${el.name}</label>
+                </div>
+            `);
+        })
+        updateHeight();
+    }
+
+    function clearModels() {
+        var nodes = containerModel.querySelectorAll('.toggle');
+
+        for (var i = 0, len = nodes.length; i < len; i++) {
+            var node = nodes[i];
+            node.remove()
+        }
+    }
+
+    
+
+    const btnElement = document.querySelector('.b-properties__btn');
+
+    function updateBtnClass() {
+        const toggleElements = document.querySelector('.toggle--1');
+
+        let totalWidth = 0;
+        let totalHeight = 0;
+
+        if (toggleElements) {
+            let totalWidth = toggleElements.clientWidth;
+            let totalHeight = toggleElements.clientHeight;
+    
+            btnElement.style.width = totalWidth + 'px';
+            btnElement.style.height = totalHeight + 'px';
+        }
+
+        $('.toggle--1').click((e) => {
+            updateModel();
+        })
+    }
+    function updateHeight() {
+        let heightModelBlock = $('.b-properties-top__wrapper').height();
+
+        if(window.screen.width <= 480) {
+            if(heightModelBlock === 122) {
+                $('.b-model__more').css('display', 'flex')
+            } else {
+                $('.b-model__more').css('display', 'none')
+            }
+        } else {
+            if(heightModelBlock === 155) {
+                $('.b-model__more').css('display', 'flex')
+            } else {
+                $('.b-model__more').css('display', 'none')
+            }
+        }
+    }
+    function updateModel() {
+       $('.model-container').removeClass('active')
+    }
+
+    window.addEventListener('resize', updateBtnClass);
+    window.addEventListener('resize', updateHeight);
+
+    $('.b-properties__btn').click((e) => {
+        $('.b-properties__wrapper').toggleClass('active');
+    })
+
+    let toggleModel = false;
+    $('.b-model__more').click((e) => {
+        $('.model-container').toggleClass('active');
+        if(toggleModel) {
+            $("html, body").animate({ scrollTop: 140 }, "medium");
+            return false;
+        } else {
+            toggleModel = true;
+        }
+    })
+    
 });

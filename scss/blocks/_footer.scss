@@ -14,8 +14,13 @@
         display: grid;
         grid-template-columns: 225px auto 225px;
         gap: 180px;
-        @media(max-width: $breakpoint1280) {
+
+        @media(max-width: 1500px) {
+            justify-content: space-between;
             gap: 60px;
+        }
+        @media(max-width: $breakpoint1280) {
+            gap: 20px;
         }
         @media(max-width: $breakpoint1024) {
             grid-template-columns: 225px auto;
@@ -81,21 +86,25 @@
 }
 
 .footer-list {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 270px);
     row-gap: 12px;
     column-gap: 80px;
     margin-top: 20px;
-    width: fit-content;
-    max-height: 200px;
 
     @media(max-width: $breakpoint1280) {
         column-gap: 30px;
+        grid-template-columns: repeat(2, 220px);
+    }
+    @media(max-width: 880px) {
+        grid-template-columns: repeat(2, 270px);
     }
     @media(max-width: $breakpoint660) {
-        max-height: 100%;
+        grid-template-columns: repeat(2, 220px);
         margin-top: 16px;
+    }
+    @media(max-width: $breakpoint480) {
+        grid-template-columns: 1fr;
     }
 
     &__item {
