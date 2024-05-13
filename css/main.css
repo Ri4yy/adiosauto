@@ -2952,6 +2952,8 @@ body {
 .footer-list {
   display: grid;
   grid-template-columns: repeat(2, 270px);
+  grid-template-rows: repeat(5, 1fr);
+  grid-auto-flow: column;
   row-gap: 12px;
   -webkit-column-gap: 80px;
      -moz-column-gap: 80px;
@@ -2980,6 +2982,8 @@ body {
 @media (max-width: 480px) {
   .footer-list {
     grid-template-columns: 1fr;
+    grid-template-rows: unset;
+    grid-auto-flow: unset;
   }
 }
 .footer-list__item {

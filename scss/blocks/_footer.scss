@@ -88,6 +88,8 @@
 .footer-list {
     display: grid;
     grid-template-columns: repeat(2, 270px);
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: column;
     row-gap: 12px;
     column-gap: 80px;
     margin-top: 20px;
@@ -105,6 +107,8 @@
     }
     @media(max-width: $breakpoint480) {
         grid-template-columns: 1fr;
+        grid-template-rows: unset;
+        grid-auto-flow: unset;
     }
 
     &__item {
