@@ -31,125 +31,154 @@ document.addEventListener('DOMContentLoaded' , function() {
     let containerMark = document.querySelector('.brand-container'),
     containerModel = document.querySelector('.model-container');
     let data;
-
-    fetch('/js/api.json')
-    .then((response) => {
-        return response.json();
-    })
-    .then((responseData) => {
-        data = responseData;
-        
-        data.forEach(el => {
-            getMarks(el.id)
+    if(typeof(containerMark) != 'undefined' && containerMark != null) {
+        fetch('/js/api.json')
+        .then((response) => {
+            return response.json();
+        })
+        .then((responseData) => {
+            data = responseData;
+            
+            data.forEach(el => {
+                getMarks(el.id)
+            });
         });
-    });
 
-    containerMark.addEventListener('change', (e) => {
-        clearModels();
+        containerMark.addEventListener('change', (e) => {
+            clearModels();
 
-        let marks = $(e.target).closest('.toggle').find('input').val();
+            let marks = $(e.target).closest('.toggle').find('input').val();
 
-        let selectedMark = data.find(el => el.id === marks);
+            let selectedMark = data.find(el => el.id === marks);
 
-        if (selectedMark) {
-            getModels(selectedMark.models);
-        }
-    })
+            if (selectedMark) {
+                getModels(selectedMark.models);
+            }
+        })
 
 
-    function getMarks(mark) {
+        function getMarks(mark) {
 
-        $('.brand-container').append(`
-        <div class="toggle toggle--1">
-            <input id="brand-${mark}" type="radio" name="brand" value="${mark}">
-            <label for="brand-${mark}"><img src="../img/logo/${mark}.png" alt=""></label>
-        </div>
-        `);
-
-        updateBtnClass();
-        
-    }
-
-    function getModels(models) {
-        models.forEach((el) => {
-            $('.model-container').append(`
-                <div class="toggle toggle--2">
-                    <input id="model-${el.id}" type="radio" name="model" value="${el.name}">
-                    <label for="model-${el.id}">${el.name}</label>
-                </div>
+            $('.brand-container').append(`
+            <div class="toggle toggle--1">
+                <input id="brand-${mark}" type="radio" name="brand" value="${mark}">
+                <label for="brand-${mark}"><img src="../img/logo/${mark}.png" alt=""></label>
+            </div>
             `);
-        })
-        updateHeight();
-    }
 
-    function clearModels() {
-        var nodes = containerModel.querySelectorAll('.toggle');
-
-        for (var i = 0, len = nodes.length; i < len; i++) {
-            var node = nodes[i];
-            node.remove()
-        }
-    }
-
-    
-
-    const btnElement = document.querySelector('.b-properties__btn');
-
-    function updateBtnClass() {
-        const toggleElements = document.querySelector('.toggle--1');
-
-        let totalWidth = 0;
-        let totalHeight = 0;
-
-        if (toggleElements) {
-            let totalWidth = toggleElements.clientWidth;
-            let totalHeight = toggleElements.clientHeight;
-    
-            btnElement.style.width = totalWidth + 'px';
-            btnElement.style.height = totalHeight + 'px';
+            updateBtnClass();
+            
         }
 
-        $('.toggle--1').click((e) => {
-            updateModel();
-        })
-    }
-    function updateHeight() {
-        let heightModelBlock = $('.b-properties-top__wrapper').height();
+        function getModels(models) {
+            models.forEach((el) => {
+                $('.model-container').append(`
+                    <div class="toggle toggle--2">
+                        <input id="model-${el.id}" type="radio" name="model" value="${el.name}">
+                        <label for="model-${el.id}">${el.name}</label>
+                    </div>
+                `);
+            })
+            updateHeight();
+        }
 
-        if(window.screen.width <= 480) {
-            if(heightModelBlock === 122) {
-                $('.b-model__more').css('display', 'flex')
-            } else {
-                $('.b-model__more').css('display', 'none')
-            }
-        } else {
-            if(heightModelBlock === 155) {
-                $('.b-model__more').css('display', 'flex')
-            } else {
-                $('.b-model__more').css('display', 'none')
+        function clearModels() {
+            var nodes = containerModel.querySelectorAll('.toggle');
+
+            for (var i = 0, len = nodes.length; i < len; i++) {
+                var node = nodes[i];
+                node.remove()
             }
         }
-    }
-    function updateModel() {
-       $('.model-container').removeClass('active')
-    }
 
-    window.addEventListener('resize', updateBtnClass);
-    window.addEventListener('resize', updateHeight);
+        
 
-    $('.b-properties__btn').click((e) => {
-        $('.b-properties__wrapper').toggleClass('active');
-    })
+        const btnElement = document.querySelector('.b-properties__btn');
 
-    let toggleModel = false;
-    $('.b-model__more').click((e) => {
-        $('.model-container').toggleClass('active');
-        if(toggleModel) {
-            $("html, body").animate({ scrollTop: 140 }, "medium");
+        function updateBtnClass() {
+            const toggleElements = document.querySelector('.toggle--1');
+
+            let totalWidth = 0;
+            let totalHeight = 0;
+
+            if (toggleElements) {
+                let totalWidth = toggleElements.clientWidth;
+                let totalHeight = toggleElements.clientHeight;
+        
+                btnElement.style.width = totalWidth + 'px';
+                btnElement.style.height = totalHeight + 'px';
+            }
+
+            $('.toggle--1').click((e) => {
+                updateModel();
+            })
+        }
+        function updateHeight() {
+            let heightModelBlock = $('.b-properties-top__wrapper').height();
+
+            if(window.screen.width <= 480) {
+                if(heightModelBlock === 122) {
+                    $('.b-model__more').css('display', 'flex')
+                } else {
+                    $('.b-model__more').css('display', 'none')
+                }
+            } else {
+                if(heightModelBlock === 155) {
+                    $('.b-model__more').css('display', 'flex')
+                } else {
+                    $('.b-model__more').css('display', 'none')
+                }
+            }
+        }
+        function updateModel() {
+        $('.model-container').removeClass('active')
+        }
+
+        window.addEventListener('resize', updateBtnClass);
+        window.addEventListener('resize', updateHeight);
+
+        $('.b-properties__btn').click((e) => {
+            $('.b-properties__wrapper').toggleClass('active');
+        })
+
+        let toggleModel = false;
+        $('.b-model__more').click((e) => {
+            $('.model-container').toggleClass('active');
+            if(toggleModel) {
+                $("html, body").animate({ scrollTop: 140 }, "medium");
+                return false;
+            } else {
+                toggleModel = true;
+            }
+        })
+    };
+
+    // Модальное окно
+    function showModal(btnOpen, modalBody) {
+        btnOpen.click(function() {
+            modalBody.addClass('active');
+            $('html').addClass('no-scroll');
             return false;
-        } else {
-            toggleModel = true;
-        }
-    })
-    
+        });		
+     
+        $(document).keydown(function(e) {
+            if (e.keyCode === 27) {
+                e.stopPropagation();
+                modalBody.removeClass('active');
+                $('html').removeClass('no-scroll');
+            }
+        });
+        
+        modalBody.click(function(e) {
+            if ($(e.target).closest('.modal__wrapper').length == 0) {
+                $(this).removeClass('active');					
+                $('html').removeClass('no-scroll');
+            }
+        });
+        
+        $('.close-modal').click((e) => {
+            $('html').removeClass('no-scroll');
+        })
+    }
+    showModal($('.open-modal'), $('.modal--form'));
 });
