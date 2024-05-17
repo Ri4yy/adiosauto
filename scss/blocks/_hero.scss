@@ -17,11 +17,19 @@
         position: relative;
         display: flex;
         gap: 40px;
+        min-height: 434px;
 
         padding: 20px 0 40px 40px;
 
+        @media(max-width: $breakpoint768) {
+            min-height: 374px;
+        }
+        @media(max-width: $breakpoint660) {
+            min-height: 538px;
+        }
         @media(max-width: $breakpoint480) {
             padding: 20px 16px 28px 16px;
+            min-height: 506px;
         }
     }
     &__description {

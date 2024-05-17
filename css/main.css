@@ -1101,11 +1101,23 @@ body {
   display: -ms-flexbox;
   display: flex;
   gap: 40px;
+  min-height: 434px;
   padding: 20px 0 40px 40px;
+}
+@media (max-width: 768px) {
+  .hero__top {
+    min-height: 374px;
+  }
+}
+@media (max-width: 660px) {
+  .hero__top {
+    min-height: 538px;
+  }
 }
 @media (max-width: 480px) {
   .hero__top {
     padding: 20px 16px 28px 16px;
+    min-height: 506px;
   }
 }
 .hero__description {
