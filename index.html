@@ -1525,14 +1525,43 @@
         </section>
     </main>
     <div class="modal">
-        <div class="modal__body">
-            <div class="modal-success">
+        <div class="modal__body modal__body--alert">
+            <div class="modal__wrapper modal-success">
                 <button class="close-modal">
                     <img src="./img/icons/close.svg" alt="">
                 </button>
                 <img src="./img/icons/success.svg" class="modal-success__icon" alt="">
                 <p class="modal-success__title">Заявка успешно отправлена!</p>
                 <p class="modal-success__text">Скоро мы вам перезвоним</p>
+            </div>
+        </div>
+    </div>
+    <div class="modal">
+        <div class="modal__body">
+            <div class="modal__wrapper modal-form">
+                <button class="close-modal">
+                    <img src="./img/icons/close-white.svg" alt="">
+                </button>
+                <h3 class="title-h3 title-h3--white">Узнайте стоимость своего<br> авто прямо сейчас</h3>
+                <p class="modal-form__subtitle">Оценщик перезвонит вам сразу.</p>
+                <form action="" method="POST" class="form form-main">
+                    <input type="text" name="brand" class="input form-main__input" placeholder="Марка авто">
+                    <input type="text" name="year" class="input form-main__input" placeholder="Год выпуска">
+                    <input type="tel" name="phone" class="input form-main__input" placeholder="Ваш телефон">
+                    <button type="submit" class="btn btn--form">
+                        <span>Оценить авто</span>
+                        <div class="btn__circle btn__circle--black">
+                            <svg width="23" height="21" viewBox="0 0 23 21" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.7998 1.5L20.8998 10.5L12.7998 19.5" stroke="white" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                                <path d="M20 10.5L2 10.5" stroke="white" stroke-width="2.5"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                    </button>
+                    <small>Нажимая на кнопку, я принимаю условия соглашения</small>
+                </form>
             </div>
         </div>
     </div>

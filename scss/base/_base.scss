@@ -1,12 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
 html,
 body {
-    overflow-x: hidden;
+    
     font-family: "Open Sans", sans-serif;
     display: flex;
     flex-direction: column;
     height: 100%;
     background-color: #F0F0F0;
+
+    @media(max-width: $breakpoint1280) {
+        overflow-x: hidden;
+    }
 }
 .container {
     max-width: 1680px;

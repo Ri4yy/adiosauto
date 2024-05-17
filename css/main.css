@@ -91,7 +91,6 @@ legend {
 
 html,
 body {
-  overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -102,6 +101,12 @@ body {
           flex-direction: column;
   height: 100%;
   background-color: #F0F0F0;
+}
+@media (max-width: 1280px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 }
 
 .container {
@@ -3908,12 +3913,30 @@ body {
   pointer-events: none;
 }
 @media (max-width: 480px) {
-  .modal__body {
+  .modal__body--alert {
     top: unset;
     left: 0;
     right: 0;
     translate: unset;
     bottom: 0;
+  }
+}
+@media (max-width: 480px) {
+  .modal__body--alert .modal__wrapper {
+    padding: 48px 20px;
+    border-radius: 35px 35px 0 0;
+  }
+}
+.modal__wrapper {
+  position: relative;
+  padding: 48px 40px;
+  border-radius: 35px;
+  background-color: #fff;
+}
+@media (max-width: 480px) {
+  .modal__wrapper {
+    padding: 48px 20px;
+    border-radius: 20px;
   }
 }
 .modal::before {
@@ -3933,7 +3956,6 @@ body {
 }
 
 .modal-success {
-  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3944,15 +3966,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 48px 40px;
-  border-radius: 35px;
-  background-color: #fff;
   min-width: 480px;
 }
 @media (max-width: 480px) {
   .modal-success {
-    padding: 48px 20px;
-    border-radius: 35px 35px 0 0;
     min-width: 100%;
     width: 100%;
   }
@@ -3998,6 +4015,41 @@ body {
   .close-modal {
     top: 24px;
     right: 24px;
+  }
+}
+
+.modal-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  background-color: #282525;
+  min-width: 510px;
+}
+.modal-form__subtitle {
+  margin-top: 20px;
+  font-weight: 500;
+  font-size: 18px;
+  color: #fff;
+}
+@media (max-width: 480px) {
+  .modal-form__subtitle {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+}
+@media (max-width: 660px) {
+  .modal-form {
+    min-width: 480px;
+    width: 100%;
+  }
+}
+@media (max-width: 480px) {
+  .modal-form {
+    min-width: 95vw;
   }
 }
 
