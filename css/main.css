@@ -153,6 +153,11 @@ body {
 }
 @media (max-width: 1680px) {
   .container-schema {
+    padding: 0 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .container-schema {
     padding: 0 10px;
   }
 }
