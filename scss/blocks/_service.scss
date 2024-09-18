@@ -1,4 +1,58 @@
-.swiper-service {
+// .swiper-service {
+
+//     &__item {
+//         position: relative;
+//         display: flex;
+//         flex-direction: column;
+//         padding: 32px 22px 32px 32px;
+//         border-radius: $main-radius;
+//         background-color: #fff;
+//         overflow: hidden;
+//         height: 376px;
+//         width: 100%;
+
+//         @media(max-width: $breakpoint768) {
+//             padding: 14px 12px;
+//             height: 240px;
+//             border-radius: 20px;
+//         }
+//     }
+//     &__text {
+//         margin-top: 16px;
+//         font-weight: 400;
+//         font-size: 16px;
+//         color: $dark-gray;
+//         z-index: 1;
+
+//         @media(max-width: $breakpoint768) {
+//             font-size: 12px;
+//             margin-top: 12px;
+//         }
+//     }
+//     &__img {
+//         position: absolute;
+//         bottom: 0;
+//         right: 0;
+//         max-width: 240px;
+//         @media(max-width: $breakpoint768) {
+//             width: 150px;
+//         }
+//     }
+//     &__slide {
+//         display: flex !important;
+//         height: auto !important;
+//     }
+// }
+
+.b-service {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(325px, 1fr));
+    gap: 20px;
+
+    @media(max-width: $breakpoint768) {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 20px;
+    }
 
     &__item {
         position: relative;
